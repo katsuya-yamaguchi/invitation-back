@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def create
     data = request.body.string
     user = User.new
-    if user.changeAlelgyStatus(data) == 0 then
+    if user.change_allelgy_status(data) == 0 then
       render nothing: true, status: 200
     elsif 
       render nothing: true, status: 400
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def update
     data = request.body.string
     user = User.new
-    if user.changeAttendStatus(data) == 0 then
+    if user.change_attend_status(data) == 0 then
       render nothing: true, status: 200
     elsif 
       render nothing: true, status: 400
