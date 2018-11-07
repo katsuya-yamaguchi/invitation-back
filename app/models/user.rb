@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   include DecodeJwt
-  def changeAttendStatus(json_data)
+  def change_attend_status(json_data)
     data = JSON.parse(json_data)
     token = data['token']
     status = data['status']
@@ -17,7 +17,7 @@ class User < ApplicationRecord
     end
   end
 
-  def changeAlelgyStatus(json_data)
+  def change_allelgy_status(json_data)
     data = JSON.parse(json_data)
     token = data['token']
     status = data['status']
