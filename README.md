@@ -3,7 +3,7 @@
 invitation-backは、「結婚式の招待状サービス」の招待客の認証を除くバックエンド処理を実現します。  
 招待客の認証はFirebaseで行っており、Firebaseから取得したトークンで個人を特定しています。  
 
-RAILS APIで実現している機能は以下になります。
+Rails APIで実現している機能は以下になります。
 
 **アレルギーの状態を更新**  
 招待客のアレルギー状態に関する情報をDB(カラム：allelgy_status)で管理しています。  
@@ -11,12 +11,12 @@ RAILS APIで実現している機能は以下になります。
 /userでpostリクエスト(Firebaseで取得した招待客の毎のトークンと一緒に)があった場合に、allelgy_statusを更新します。
 
 **結婚式への出席状況を更新**  
-招待客の出席状況に関する情報をDB(カラム：attend_status)で管理しています。
+招待客の出席状況に関する情報をDB(カラム：attend_status)で管理しています。  
 (「0」が出席。「1」が欠席。)  
 /userでpatchリクエスト(Firebaseで取得した招待客の毎のトークンと一緒に)があった場合に、attend_statusを更新します。
 
 # Environment
-## Ruby/Rails version
+## Dependency
 詳細は、Gemfileを参照下さい。
 
 ## Database
