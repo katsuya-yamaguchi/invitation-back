@@ -1,10 +1,10 @@
 class User < ApplicationRecord
-  include DecodeJwt
+  #include DecodeJwt
   def change_attend_status(json_data)
     data = JSON.parse(json_data)
     token = data['token']
     status = data['status']
-    user_data = decode(token)
+    user_data = DecodeJwt.decode(token)
     email = user_data['email']
     user_id = user_data['user_id']
     user = User.where(email: email)
@@ -21,7 +21,7 @@ class User < ApplicationRecord
     data = JSON.parse(json_data)
     token = data['token']
     status = data['status']
-    user_data = decode(token)
+    user_data = DecodeJwt.decode(token)
     email = user_data['email']
     user_id = user_data['user_id']
     user = User.where(email: email)
