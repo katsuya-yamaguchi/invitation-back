@@ -8,7 +8,7 @@ module DecodeJwt
 
   class << self
     def decode(token)
-      pubkey = getPubkey
+      pubkey = get_pubkey
       begin
         encode_data = JWT.decode(token, pubkey, false, { algorithm: 'RS256' })
         encode_data[0]
@@ -18,7 +18,7 @@ module DecodeJwt
       end
     end
 
-    def getPubkey
+    def get_pubkey
       uri = URI.parse('https://www.googleapis.com/robot/v1/metadata/x509/securetoken@system.gserviceaccount.com')
       request = Net::HTTP.new(uri.host, uri.port)
       request.use_ssl = true
