@@ -11,8 +11,8 @@ class User < ApplicationRecord
     begin
       user.update_all(attend_status: status, sid: user_id)
       return 0
-    rescue => error
-      p error
+    rescue => e
+      logger.error e
       return 1
     end
   end
@@ -28,8 +28,8 @@ class User < ApplicationRecord
     begin
       user.update_all(user_allergy: status, sid: user_id)
       return 0
-    rescue => error
-      p error
+    rescue => e
+      logger.error e
       return 1
     end
   end
