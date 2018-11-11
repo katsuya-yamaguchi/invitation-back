@@ -12,8 +12,8 @@ module DecodeJwt
       begin
         encode_data = JWT.decode(token, pubkey, false, { algorithm: 'RS256' })
         encode_data[0]
-      rescue => error
-        p error
+      rescue => e
+        logger.error e
         encode_data = nil
       end
     end
